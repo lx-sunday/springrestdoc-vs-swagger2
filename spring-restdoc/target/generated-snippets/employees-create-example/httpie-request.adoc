@@ -1,0 +1,5 @@
+[source,bash]
+----
+$ echo '{"role":"Java Developer","name":"liaoxue"}' | http POST 'http://localhost:8080/employees' \
+    'Content-Type:application/json'
+----

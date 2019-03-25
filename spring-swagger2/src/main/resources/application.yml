@@ -1,0 +1,10 @@
+server:
+  port: 8841
+  session:
+    timeout: 7200
+  
+spring:
+  http:
+    multipart:
+      enabled: true
+      max-file-size: 50MB

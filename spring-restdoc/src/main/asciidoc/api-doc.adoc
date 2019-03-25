@@ -1,0 +1,11 @@
+[[resources-employees]]
+== employees
+
+用于创建/查询employees
+
+[[resources-employees-creating]]
+=== creating employees
+
+通过POST请求创建employees
+
+operation::employees-create-example[snippets='request-fields,http-request,http-response']

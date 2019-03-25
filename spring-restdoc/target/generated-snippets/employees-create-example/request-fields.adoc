@@ -1,0 +1,12 @@
+|===
+|Path|Type|Description
+
+|`+name+`
+|`+String+`
+|姓名
+
+|`+role+`
+|`+String+`
+|角色
+
+|===
