@@ -19,20 +19,11 @@ public class Swagger2Config {
 	@Bean
 	public Docket createRestApi() {
 		return new Docket(DocumentationType.SWAGGER_2)
-				.apiInfo(apiInfo())
 				.select()
 				.apis(RequestHandlerSelectors.withClassAnnotation(Api.class))
 				.paths(PathSelectors.any())
 				.build();
 	}
 	
-	private ApiInfo apiInfo() {
-		return new ApiInfoBuilder()
-				.title("springboot利用swagger构建api文档") //设置标题
-				.description("简单优雅的restfun风格") //描述
-				.termsOfServiceUrl("") //更新地址
-				.contact("liaoxue") //作者信息
-				.version("1.0") //版本
-				.build();
-	}
+	
 }

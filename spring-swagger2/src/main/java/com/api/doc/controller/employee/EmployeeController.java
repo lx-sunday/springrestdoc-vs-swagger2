@@ -19,6 +19,8 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import springfox.documentation.annotations.ApiIgnore;
 
 @Api(value="员工管理")
 @RestController
@@ -32,14 +34,15 @@ class EmployeeController {
 	}
 
     @ApiOperation(value="查询")
+    @ApiImplicitParam(name="name",value="部门名称",required=false,dataType="String",paramType="query")
     @GetMapping
-	List<Employee> all() {
+	List<Employee> all(String name) {
     	List<Employee> list = repository.findAll();
 		return list;
 	}
     
     @ApiOperation(value="保存")
-    @ApiImplicitParam(name="employeeUpdateVo",value="employeeUpdateVo",required=true,dataType="employeeUpdateVo")
+    @ApiImplicitParam(name="employeeUpdateVo",value="employeeUpdateVo",required=true,dataType="EmployeeUpdateVo")
     @PostMapping
 	Employee newEmployee(@RequestBody EmployeeUpdateVo employeeUpdateVo) {
     	Employee employee=new Employee(employeeUpdateVo.getName(), employeeUpdateVo.getRole());
